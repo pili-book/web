@@ -10,6 +10,8 @@ async function login() {
   await page.click('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
  
    // 输入账户
+ await page.waitForSelector('#login_id')
+await page.click('#login_id')
 await page.type('#login_id', 'lixiaohu44@zoho.com');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')
