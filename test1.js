@@ -12,7 +12,10 @@ const page = await browser.newPage();
   await page.waitForSelector('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
   await page.click('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
 
-
+   // 输入账户
+await page.type('#login_id', 'lixiaohu44@zoho.com');
+await page.waitForSelector('#nextbtn')
+await page.click('#nextbtn')
 
 
 await page.waitForSelector('#nextbtn')
