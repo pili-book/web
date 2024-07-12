@@ -6,6 +6,12 @@ const init = async () => {
     devtools: true, // 是否自动打开开发者工具，默认为 false
     args: ["--start-maximized"], // 启动时传递给浏览器的额外参数
   });
+  function delay(time) {
+   return new Promise(function(resolve) { 
+       setTimeout(resolve, time)
+   });
+}
+
 const page = await browser.newPage();
   // 跳转到相应的网站
   await page.goto('https://www.zoho.com/mail/');
@@ -16,11 +22,17 @@ const page = await browser.newPage();
 await page.type('#login_id', 'lixiaohu44@zoho.com');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')
-
-
+await delay(300); 
+  
+// 输入密码
+await page.type('#password', 'Suiyi44@');
 await page.waitForSelector('#nextbtn')
-await page.click('#nextbtn')
+await page.click('#nextbtn')  
+await delay(300); 
+
 
 await navigationPromise
+
+await delay(4000);   
   // 关闭浏览器
   await browser.close();
