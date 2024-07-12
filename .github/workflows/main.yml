@@ -20,4 +20,4 @@ jobs:
       run: npm install
  
     - name: Puppeteer Test
-      run: node test.js
+      run: node test1.js
