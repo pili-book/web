@@ -9,6 +9,7 @@ const init = async () => {
 const page = await browser.newPage();
   // 跳转到相应的网站
   await page.goto('https://www.zoho.com/mail/');
-
+  await page.waitForSelector('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
+  await page.click('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
   // 关闭浏览器
   await browser.close();
