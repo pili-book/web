@@ -1,25 +1,33 @@
+
 const puppeteer = require('puppeteer');
  
-(async () => {
-const { chromium } = require('playwright');
-const browser = await chromium.launch()
-const page = await browser.newPage()
-const navigationPromise = page.waitForNavigation()
-
-await page.goto('https://accounts.zoho.com/signin?servicename=VirtualOffice&signupurl=https://www.zoho.com/mail/zohomail-pricing.html&serviceurl=https://mail.zoho.com')
-
-await page.setViewportSize({ width: 1374, height: 880 })
-
-await page.waitForSelector('#login_id')
-await page.click('#login_id')
-
-await page.waitForSelector('#password')
-await page.click('#password')
-
+async function login() {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+   // 跳转到相应的网站
+  await page.goto('https://www.zoho.com/mail/');
+  await page.waitForSelector('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
+  await page.click('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
+ 
+   // 输入账户
+await page.type('#login_id', 'lixiaohu44@zoho.com');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')
+await page.waitForNavigation(); 
+ // 输入密码
+await page.type('#password', 'Suiyi44@');
+await page.waitForSelector('#nextbtn')
+await page.click('#nextbtn')  
 
-await navigationPromise
+ await page.waitForNavigation();
+  // 登录成功后的操作，比如保存cookie等
+  // ...
+ 
+  await browser.close();
+}
+ 
+login();
 
-await browser.close()
-})();
+
+
+
