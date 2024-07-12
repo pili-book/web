@@ -23,7 +23,7 @@ await page.type('#password', 'Suiyi44@');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')  
 
- await page.waitForNavigation();
+ // await page.waitForNavigation();
   // 登录成功后的操作，比如保存cookie等
   // ...
  
