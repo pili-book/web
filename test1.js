@@ -11,5 +11,13 @@ const page = await browser.newPage();
   await page.goto('https://www.zoho.com/mail/');
   await page.waitForSelector('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
   await page.click('.header > #header > .zgh-utilities > .zgh-accounts > .zgh-login')
+
+
+
+
+await page.waitForSelector('#nextbtn')
+await page.click('#nextbtn')
+
+await navigationPromise
   // 关闭浏览器
   await browser.close();
