@@ -15,8 +15,10 @@ await page.click('#login_id')
 await page.type('#login_id', 'lixiaohu44@zoho.com');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')
-await page.waitForNavigation(); 
+
  // 输入密码
+ await page.waitForSelector('#password')
+await page.click('#password')
 await page.type('#password', 'Suiyi44@');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')  
