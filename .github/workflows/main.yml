@@ -2,7 +2,10 @@ name: Puppeteer Test
  
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  watch:
+    types: started
   schedule:
     - cron: 0 0 12 * * MON
  
