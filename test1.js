@@ -1,3 +1,4 @@
+const puppeteer = require('puppeteer');
 const init = async () => {
   // 启动浏览器
   const browser = await puppeteer.launch({
@@ -7,7 +8,7 @@ const init = async () => {
   });
 const page = await browser.newPage();
   // 跳转到相应的网站
-  await page.goto("https://example.com");
+  await page.goto('https://www.zoho.com/mail/');
 
   // 关闭浏览器
   await browser.close();
