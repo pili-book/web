@@ -12,14 +12,14 @@ async function login() {
    // 输入账户
  await page.waitForSelector('#login_id')
 await page.click('#login_id')
-await page.type('#login_id', 'lixiaohu44@zoho.com');
+await page.type('#login_id', '222222@zoho.com');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')
 
  // 输入密码
  await page.waitForSelector('#password')
 await page.click('#password')
-await page.type('#password', 'Suiyi44@');
+await page.type('#password', '22222222');
 await page.waitForSelector('#nextbtn')
 await page.click('#nextbtn')  
 
